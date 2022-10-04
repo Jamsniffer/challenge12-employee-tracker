@@ -1,7 +1,8 @@
 const inquirer = require('inquirer');
 const db = require('./db');
+require('dotenv').config();
 require('console.table');
-import { viewDepartments, viewRoles, viewEmployees, newDepartment, newRole, newEmployee, updateEmployeeRole } from './public/logic'
+import { viewDepartments, viewRoles, viewEmployees, newDepartment, newRole, newEmployee, updateEmployeeRole } from './public/logic/inquirerLogic'
 
 function start() {
 

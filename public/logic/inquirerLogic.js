@@ -1,17 +1,17 @@
 function viewDepartments() {
-    db.______().then(([data]) => {
+    db.findDepartments().then(([data]) => {
         console.table(data)
     }).then(() => start())
 }
 
 function viewRoles() {
-    db.______().then(([data]) => {
+    db.findRoles().then(([data]) => {
         console.table(data)
     }).then(() => start())
 }
 
 function viewEmployees() {
-    db._____().then(([data]) => {
+    db.findEmployees().then(([data]) => {
         console.table(data)
     }).then(() => start())
 }
@@ -23,12 +23,12 @@ function newDepartment() {
         message: 'What department would you like to add?'
 
     }).then((res) => {
-        db._____(res)
+        db.createDepartment(res)
     }).then(() => start())
 };
 
 function newRole() {
-    db._____().then(([data]) => {
+    db.findDepartments().then(([data]) => {
         const deptChoices = data.map(({ id, name }) => ({
             name: name,
             value: id
@@ -53,20 +53,20 @@ function newRole() {
                 choices: deptChoices
             }
         ]).then((res) => {
-            db._____(res)
+            db.createRole(res)
         }).then(() => start())
     })
 
 };
 
 function newEmployee() {
-    db._____().then(([data]) => {
+    db.findRoles().then(([data]) => {
         const roleChoice = data.map(({ id, title }) => ({
             name: title,
             value: id
         }));
 
-        db._____().then(([data]) => {
+        db.findEmployees().then(([data]) => {
             const managerId = data.map(({ id, first_name, last_name }) => ({
                 name: `${first_name} ${last_name}`,
                 value: id
@@ -92,7 +92,7 @@ function newEmployee() {
                 },
 
             ]).then((res) => {
-                db.____(res)
+                db.createEmployee(res)
             }).then(() => start())
 
         })
@@ -103,7 +103,7 @@ function newEmployee() {
 function updateEmployeeRole() {
 
 
-    db._____().then(([data]) => {
+    db.updateRole().then(([data]) => {
         console.table(data)
     }).then(() => start())
 }
