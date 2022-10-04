@@ -1,10 +1,11 @@
-const { default: inquirer } = require('inquirer');
 const inquirer = require('inquirer');
-const db =require('./db');
+const db = require('./db');
+require('console.table');
+import { viewDepartments, viewRoles, viewEmployees, newDepartment, newRole, newEmployee, updateEmployeeRole } from './public/logic'
 
 function start() {
 
-    const jobsArr = ['HR','IT', 'ADMIN'];
+    const jobsArr = ['HR', 'IT', 'ADMIN'];
 
     inquirer.prompt({
         type: 'list',
@@ -21,5 +22,38 @@ function start() {
             'quit',
 
         ]
+
+    }).then((res) => {
+        switch (res.userInput) {
+
+            case 'view all departments':
+                viewDepartments();
+                break;
+            case 'view all roles':
+                viewRoles();
+                break;
+            case 'view all employees':
+                viewEmployees();
+                break;
+            case 'add a department':
+                newDepartment()
+                break;
+            case 'add a role':
+                newRole()
+                break;
+            case 'add an employee':
+                newEmployee()
+                break;
+            case 'update an employee role':
+                updateRole()
+                break;
+            case 'update an employee role':
+                removeEmployee()
+                break;
+            default:
+                process.exit()
+        }
     })
 }
+
+start();

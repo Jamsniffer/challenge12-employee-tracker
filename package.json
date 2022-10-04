@@ -1,0 +1,27 @@
+{
+  "name": "challenge12-employee-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.1",
+    "inquirer": "^9.1.2",
+    "mysql2": "^2.3.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jamsniffer/challenge12-employee-tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jamsniffer/challenge12-employee-tracker/issues"
+  },
+  "homepage": "https://github.com/Jamsniffer/challenge12-employee-tracker#readme"
+}
