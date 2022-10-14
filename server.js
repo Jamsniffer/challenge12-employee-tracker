@@ -21,7 +21,6 @@ function start() {
             'add an employee',
             'update an employee role',
             'quit',
-
         ]
 
     }).then((res) => {
