@@ -2,7 +2,7 @@ const inquirer = require('inquirer');
 const db = require('./db');
 require('dotenv').config();
 require('console.table');
-import { viewDepartments, viewRoles, viewEmployees, newDepartment, newRole, newEmployee, updateEmployeeRole } from './public/logic/inquirerLogic'
+const { viewDepartments, viewRoles, viewEmployees, newDepartment, newRole, newEmployee, updateEmployeeRole } = require('./public/logic/inquirerLogic')
 
 function start() {
 
@@ -12,7 +12,7 @@ function start() {
         type: 'list',
         name: 'userInput',
         message: 'what would you like to do?',
-        Options: [
+        choices: [
             'view all departments',
             'view all roles',
             'view all employees',
@@ -54,6 +54,9 @@ function start() {
                 process.exit()
         }
     })
+    .catch(err => {
+        console.log(err.message);
+    });
 }
 
 start();

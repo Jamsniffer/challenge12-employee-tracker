@@ -110,4 +110,4 @@ function updateEmployeeRole() {
 
 
 
-module.export = { viewDepartments, viewRoles, viewEmployees, newDepartment, newRole, newEmployee, updateEmployeeRole }
+module.exports = { viewDepartments, viewRoles, viewEmployees, newDepartment, newRole, newEmployee, updateEmployeeRole }

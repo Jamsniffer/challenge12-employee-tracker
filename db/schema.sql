@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS department;
 DROP TABLE IF EXISTS role;
 DROP TABLE IF EXISTS employee;
 
-USE employees;
+USE employeeRoster;
 
 CREATE TABLE department (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -25,3 +25,4 @@ CREATE TABLE employee (
     FOREIGN KEY (role_id) REFERENCES role(id) ON DELETE CASCADE,
     manager_id INT,
     FOREIGN KEY (manager_id) REFERENCES employee(id) ON DELETE SET NULL
+);
